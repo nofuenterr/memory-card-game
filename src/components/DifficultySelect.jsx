@@ -1,32 +1,40 @@
+import '../styles/DifficultySelect.css'
+
 function DifficultySelect({ setDifficulty, setGameState }) {
 
   return (
-    <>
-      <div className="difficulty-select">
-        <div onClick={() => {
+    <div className="difficulty-select">
+      <button 
+        onClick={() => {
           setDifficulty('easy')
           setGameState('inGame')
-        }} tabIndex={0} className="difficulty difficulty--easy">
-          {/* <div><img src="" alt="" /></div> */}
-          <p>Easy</p>
-        </div>
-        <div onClick={() => {
+        }} 
+        tabIndex={0}
+        className="difficulty difficulty--easy"
+      >
+        Easy
+      </button>
+      <button
+        onClick={() => {
           setDifficulty('normal')
           setGameState('inGame')
-        }} tabIndex={0} className="difficulty difficulty--normal">
-          {/* <div><img src="" alt="" /></div> */}
-          <p>Normal</p>
-        </div>
-        <div onClick={() => {
+        }} 
+        tabIndex={0}
+        className="difficulty difficulty--normal"
+      >
+        Normal
+      </button>
+      <button 
+        onClick={() => {
           setDifficulty('hard')
           setGameState('inGame')
-        }} tabIndex={0} className="difficulty difficulty--hard">
-          {/* <div><img src="" alt="" /></div> */}
-          <p>Hard</p>
-        </div>
-      </div>
-      <button onClick={() => setGameState('menu')} className="back-to-menu">Menu</button>
-    </>
+        }} 
+        tabIndex={0} 
+        className="difficulty difficulty--hard"
+      >
+        Hard
+      </button>
+    </div>
   )
 }
 
