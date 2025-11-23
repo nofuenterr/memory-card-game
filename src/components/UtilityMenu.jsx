@@ -1,4 +1,4 @@
-function UtilityMenu() {
+function UtilityMenu({ handleSettingsModal }) {
 
   return (
     <div className="utility-menu">
@@ -8,7 +8,10 @@ function UtilityMenu() {
       <button className="leaderboard">
         Leaderboards
       </button>
-      <button className="settings">
+      <button 
+        onClick={() => handleSettingsModal(true)} 
+        className="settings"
+      >
         Settings
       </button>
     </div>

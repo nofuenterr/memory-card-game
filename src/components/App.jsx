@@ -1,15 +1,23 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import '../styles/App.css'
 import UtilityMenu from './UtilityMenu.jsx'
 import Menu from './Menu.jsx'
 import DifficultySelect from './DifficultySelect.jsx'
 import InGame from './InGame.jsx'
+import Settings from './Settings.jsx'
 
 function App({ cards }) {
   const [gameState, setGameState] = useState('menu')
   const [bestScore, setBestScore] = useState(0)
   const [cardsList] = useState(cards)
   const [difficulty, setDifficulty] = useState('normal')
+  const settingsModalRef = useRef(null)
+
+  function handleSettingsModal(isSettingsOpen) {
+    isSettingsOpen
+      ? settingsModalRef.current.showModal()
+      : settingsModalRef.current.close()
+  }
 
   const renderScreen = () => {
     if (gameState === 'menu') return (
@@ -37,7 +45,14 @@ function App({ cards }) {
   return (
     <>
       {renderScreen()}
-      <UtilityMenu />
+      <UtilityMenu 
+        handleSettingsModal={handleSettingsModal}
+      />
+      <Settings 
+        ref={settingsModalRef} 
+        setGameState={setGameState}
+        handleSettingsModal={handleSettingsModal}
+      />
     </>
   );
 }
