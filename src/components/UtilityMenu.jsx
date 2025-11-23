@@ -1,3 +1,5 @@
+import '../styles/UtilityMenu.css'
+
 function UtilityMenu({ handleSettingsModal }) {
 
   return (
