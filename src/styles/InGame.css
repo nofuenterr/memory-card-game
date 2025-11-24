@@ -51,7 +51,6 @@
   cursor: pointer;
   width: var(--width);
   height: var(--height);
-  border-radius: 4px;
   background: url('../assets/images/card-background-image.jpg') center / cover no-repeat;
   padding: var(--space-sm);
   display: grid;
@@ -67,6 +66,13 @@
 .card p {
   padding-top: var(--space-sm);
 }
+
+.tilt-card {
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
 
 /* @keyframes switch {
   0% {

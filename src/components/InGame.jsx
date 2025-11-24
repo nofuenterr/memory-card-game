@@ -1,5 +1,6 @@
 import { useState, useRef } from 'react';
 import GameOver from './GameOver';
+import TiltCard from './TiltCard';
 import '../styles/InGame.css'
 import titleImage from '../assets/images/title-image.png'
 
@@ -150,21 +151,23 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
           <ul className="active-cards">
             {activeCards.map(card => {
               return (
-                <li
-                  data-tilt
-                  className='card tiltcard' 
-                  tabIndex={0} 
-                  key={card.id} 
-                  id={card.id} 
-                  onClick={(e) => {
-                    const cardId = +e.target.closest('.card').id
-                    handleSetScore(cardId)
-                  }}>
-                  <div className='card__image' style={{background: 'url(' + card.imageUrl + ') center / cover no-repeat'}}>
-                    {/* <img src={card.imageUrl} alt={card.fullName} /> */}
-                  </div>
-                  <p>{card.fullName}</p>
-                </li>
+                <TiltCard>
+                  <li
+                    className='card tiltcard' 
+                    tabIndex={0} 
+                    key={card.id} 
+                    id={card.id} 
+                    onClick={(e) => {
+                      const cardId = +e.target.closest('.card').id
+                      handleSetScore(cardId)
+                    }}>
+                    <div 
+                      className='card__image' 
+                      style={{background: 'url(' + card.imageUrl + ') center / cover no-repeat'}}
+                    ></div>
+                    <p>{card.fullName}</p>
+                  </li>
+                </TiltCard>
               )
             })}
           </ul>
