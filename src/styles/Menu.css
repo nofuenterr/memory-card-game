@@ -10,12 +10,12 @@
   container: menu / inline-size;
 }
 
-.title-wrapper {
+.menu .title-wrapper {
   container: title / inline-size;
   margin-bottom: 14.159292cqi;
 }
 
-p {
+.menu p {
   font-size: 3.539823cqi;
 }
 
