@@ -1,5 +1,7 @@
 import { useState, useRef } from 'react';
 import GameOver from './GameOver';
+import '../styles/InGame.css'
+import titleImage from '../assets/images/title-image.png'
 
 const getActiveCards = (deck, limit, score) => {
   if (score < deck.length) {
@@ -133,8 +135,10 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
     <>
       <div className="in-game">
         <div className="in-game__header">
-          <div className="title">
-            <h1>Game of Throats</h1>
+          <div className="title-wrapper">
+            <div className='title-image'>
+              <img src={titleImage} alt="Game of Thrones title image" />
+            </div>
             <p>Memory Card Game</p>
           </div>
           <div className="scores">
@@ -146,8 +150,9 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
           <ul className="active-cards">
             {activeCards.map(card => {
               return (
-                <li 
-                  className='card' 
+                <li
+                  data-tilt
+                  className='card tiltcard' 
                   tabIndex={0} 
                   key={card.id} 
                   id={card.id} 
@@ -155,17 +160,16 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
                     const cardId = +e.target.closest('.card').id
                     handleSetScore(cardId)
                   }}>
-                  <div>
-                    <img src={card.imageUrl} alt={card.fullName} />
+                  <div className='card__image' style={{background: 'url(' + card.imageUrl + ') center / cover no-repeat'}}>
+                    {/* <img src={card.imageUrl} alt={card.fullName} /> */}
                   </div>
-                  {card.fullName}
+                  <p>{card.fullName}</p>
                 </li>
               )
             })}
           </ul>
         </div>
       </div>
-      <button onClick={() => setGameState('menu')} className="back-to-menu">Menu</button>
       <GameOver
         ref={gameOverModalRef}
         best={best}
