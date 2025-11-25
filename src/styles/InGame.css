@@ -17,10 +17,15 @@
 
 .in-game .title-wrapper {
   text-align: center;
+  cursor: pointer;
   transition: scale 500ms;
   @starting-style {
     scale: 0;
   }
+}
+
+.in-game .title-wrapper:hover {
+  scale: 1.1;
 }
 
 .in-game .title-image {

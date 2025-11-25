@@ -145,7 +145,12 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
     <>
       <div className="in-game">
         <div className="in-game__header">
-          <div className="title-wrapper">
+          <div 
+            className="title-wrapper"
+            onClick={() => {
+              setGameState('menu')
+            }}
+          >
             <div className='title-image'>
               <img src={titleImage} alt="Game of Thrones title image" />
             </div>
