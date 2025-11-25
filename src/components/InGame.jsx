@@ -86,6 +86,7 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
   const [activeCardsLimit] = useState(() => getActiveCardsLimit(difficulty))
 
   const [activeCards, setActiveCards] = useState(() => getActiveCards([...gameDeck], activeCardsLimit, score))
+  const [newBest, setNewBest] = useState(false)
 
   const cardsRef = useRef(null)
   useEffect(() => {
@@ -99,6 +100,7 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
       })
     }
   }, [score])
+
 
   function handleSetScore(cardId) {
     const card = gameDeck.find(card => card.id === cardId)
@@ -125,13 +127,17 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
 
   function handleCloseModal() {
     setScore(0)
+    setNewBest(false)
     setGameDeck(() => getDeck(difficulty, cards))
     setActiveCards(getActiveCards([...gameDeck], activeCardsLimit, 0))
     gameOverModalRef.current.close()
   }
 
   function handleShowModal(finalScore) {
-    if (finalScore > best) setBestScore(finalScore)
+    if (finalScore > best) {
+      setBestScore(finalScore)
+      setNewBest(true);
+    }
       gameOverModalRef.current.showModal()
   }
   
@@ -191,6 +197,7 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
       <GameOver
         ref={gameOverModalRef}
         best={best}
+        newBest={newBest}
         score={score}
         result={gameDeck.length === score}
         setGameState={setGameState}

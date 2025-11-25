@@ -38,7 +38,7 @@
   grid-column: 1 / -1;
 }
 
-.gameover-wrapper > *:nth-child(n + 2) {
+.gameover-item-wrapper, .gameover-item-button {
   background-color: var(--neutral-1100);
   padding: var(--space-md);
   border-radius: 8px;
