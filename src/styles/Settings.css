@@ -7,6 +7,10 @@
   background-color: var(--neutral-1000);
   color: var(--neutral-100);
   overflow: visible;
+  transition: scale 500ms;
+  @starting-style {
+    scale: 0;
+  }
 }
 
 .settings-modal::backdrop {
@@ -15,9 +19,8 @@
 
 .settings-modal[open] {
   position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  inset: 0;
+  margin: auto;
 }
 
 .settings-wrapper {

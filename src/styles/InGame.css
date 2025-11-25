@@ -17,6 +17,10 @@
 
 .in-game .title-wrapper {
   text-align: center;
+  transition: scale 500ms;
+  @starting-style {
+    scale: 0;
+  }
 }
 
 .in-game .title-image {
@@ -32,6 +36,10 @@
   flex-direction: column;
   gap: var(--space-sm);
   font-size: max(3cqi, 1rem);
+  transition: scale 500ms;
+  @starting-style {
+    scale: 0;
+  }
 }
 
 .in-game__body {
@@ -44,6 +52,10 @@
   justify-content: center;
   gap: var(--space-md);
   container-type: inline-size;
+  transition: scale 500ms;
+  @starting-style {
+    scale: 0;
+  }
 }
 
 .card {

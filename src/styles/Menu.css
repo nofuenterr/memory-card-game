@@ -8,6 +8,10 @@
   width: 100%;
   padding: var(--space-lg);
   container: menu / inline-size;
+  transition: scale 500ms;
+  @starting-style {
+    scale: 0;
+  }
 }
 
 .menu .title-wrapper {
