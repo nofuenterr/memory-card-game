@@ -90,7 +90,8 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
 
   const cardsRef = useRef(null)
   useEffect(() => {
-    if (score !== 0) {
+    const isGameOver = score === gameDeck.length
+    if (score !== 0 && !isGameOver) {
       const cards = cardsRef.current.querySelectorAll('.card')
       cards.forEach(card => {
         card.classList.add('flipped')
@@ -99,7 +100,7 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
         }, 1000)
       })
     }
-  }, [score])
+  }, [score, gameDeck.length])
 
 
   function handleSetScore(cardId) {
