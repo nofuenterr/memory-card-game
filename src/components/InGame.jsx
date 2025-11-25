@@ -62,20 +62,19 @@ const getActiveCardsLimit = (difficulty) => {
 }
 
 const getDeck = (difficulty, cards) => {
-  let deck
+  let deck = cards.map(card => {
+    card.selected = false
+    return card
+  })
   switch (difficulty) {
     case 'easy':
-      deck = cards.slice(0, 5)
-      return deck
+      return deck.slice(0, 5)
     case 'normal':
-      deck = cards.slice(0, 7)
-      return deck
+      return deck.slice(0, 7)
     case 'hard':
-      deck = cards.slice(0, 10)
-      return deck
+      return deck.slice(0, 10)
     default:
-      deck = cards.slice(0, 7)
-      return deck
+      return deck.slice(0, 7)
   }
 }
 
@@ -113,10 +112,7 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
 
   function handleCloseModal() {
     setScore(0)
-    setGameDeck(() => getDeck(difficulty, cards).map(card => {
-      card.selected = false
-      return card
-    }))
+    setGameDeck(() => getDeck(difficulty, cards))
     setActiveCards(getActiveCards([...gameDeck], activeCardsLimit, 0))
     gameOverModalRef.current.close()
   }

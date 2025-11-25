@@ -30,7 +30,8 @@ async function getCards() {
         "title": "Mother of Dragons",
         "family": "House Targaryen",
         "image": "daenerys.jpg",
-        "imageUrl": "https://thronesapi.com/assets/images/daenerys.jpg"
+        "imageUrl": "https://thronesapi.com/assets/images/daenerys.jpg",
+        "selected": false
       },
       {
         "id": 1,
@@ -40,7 +41,8 @@ async function getCards() {
         "title": "Maester",
         "family": "House Tarly",
         "image": "sam.jpg",
-        "imageUrl": "https://thronesapi.com/assets/images/sam.jpg"
+        "imageUrl": "https://thronesapi.com/assets/images/sam.jpg",
+        "selected": false
       },
       {
         "id": 2,
@@ -50,7 +52,8 @@ async function getCards() {
         "title": "King of the North",
         "family": "House Stark",
         "image": "jon-snow.jpg",
-        "imageUrl": "https://thronesapi.com/assets/images/jon-snow.jpg"
+        "imageUrl": "https://thronesapi.com/assets/images/jon-snow.jpg",
+        "selected": false
       },
       {
         "id": 3,
@@ -60,7 +63,8 @@ async function getCards() {
         "title": "No One",
         "family": "House Stark",
         "image": "arya-stark.jpg",
-        "imageUrl": "https://thronesapi.com/assets/images/arya-stark.jpg"
+        "imageUrl": "https://thronesapi.com/assets/images/arya-stark.jpg",
+        "selected": false
       },
       {
         "id": 4,
@@ -70,7 +74,8 @@ async function getCards() {
         "title": "Lady of Winterfell",
         "family": "House Stark",
         "image": "sansa-stark.jpeg",
-        "imageUrl": "https://thronesapi.com/assets/images/sansa-stark.jpeg"
+        "imageUrl": "https://thronesapi.com/assets/images/sansa-stark.jpeg",
+        "selected": false
       },
       {
         "id": 5,
@@ -80,7 +85,8 @@ async function getCards() {
         "title": "Lord of Winterfell",
         "family": "House Stark",
         "image": "bran-stark.jpg",
-        "imageUrl": "https://thronesapi.com/assets/images/bran-stark.jpg"
+        "imageUrl": "https://thronesapi.com/assets/images/bran-stark.jpg",
+        "selected": false
       },
       {
         "id": 6,
@@ -90,7 +96,8 @@ async function getCards() {
         "title": "Lord of Winterfell",
         "family": "House Stark",
         "image": "ned-stark.jpg",
-        "imageUrl": "https://thronesapi.com/assets/images/ned-stark.jpg"
+        "imageUrl": "https://thronesapi.com/assets/images/ned-stark.jpg",
+        "selected": false
       },
       {
         "id": 7,
@@ -100,7 +107,8 @@ async function getCards() {
         "title": "Lord of the Seven Kingdoms",
         "family": "House Baratheon",
         "image": "robert-baratheon.jpeg",
-        "imageUrl": "https://thronesapi.com/assets/images/robert-baratheon.jpeg"
+        "imageUrl": "https://thronesapi.com/assets/images/robert-baratheon.jpeg",
+        "selected": false
       },
       {
         "id": 8,
@@ -110,7 +118,8 @@ async function getCards() {
         "title": "Lord Commander of the Kingsguard",
         "family": "House Lannister",
         "image": "jaime-lannister.jpg",
-        "imageUrl": "https://thronesapi.com/assets/images/jaime-lannister.jpg"
+        "imageUrl": "https://thronesapi.com/assets/images/jaime-lannister.jpg",
+        "selected": false
       },
       {
         "id": 9,
@@ -120,7 +129,8 @@ async function getCards() {
         "title": "Lady of Casterly Rock",
         "family": "House Lannister",
         "image": "cersei.jpg",
-        "imageUrl": "https://thronesapi.com/assets/images/cersei.jpg"
+        "imageUrl": "https://thronesapi.com/assets/images/cersei.jpg",
+        "selected": false
       }
     ]
   } finally {
