@@ -151,11 +151,12 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
           <ul className="active-cards">
             {activeCards.map(card => {
               return (
-                <TiltCard>
+                <TiltCard
+                  key={card.id} 
+                >
                   <li
                     className='card tiltcard' 
                     tabIndex={0} 
-                    key={card.id} 
                     id={card.id} 
                     onClick={(e) => {
                       const cardId = +e.target.closest('.card').id
