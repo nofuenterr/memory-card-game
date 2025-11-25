@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import GameOver from './GameOver';
 import TiltCard from './TiltCard';
 import '../styles/InGame.css'
@@ -87,6 +87,19 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
 
   const [activeCards, setActiveCards] = useState(() => getActiveCards([...gameDeck], activeCardsLimit, score))
 
+  const cardsRef = useRef(null)
+  useEffect(() => {
+    if (score !== 0) {
+      const cards = cardsRef.current.querySelectorAll('.card')
+      cards.forEach(card => {
+        card.classList.add('flipped')
+        setTimeout(() => {
+          card.classList.remove('flipped')
+        }, 1000)
+      })
+    }
+  }, [score])
+
   function handleSetScore(cardId) {
     const card = gameDeck.find(card => card.id === cardId)
     const isSelected = card.selected
@@ -144,7 +157,7 @@ function InGame({ best, difficulty, cards, setGameState, setBestScore }) {
           </div>
         </div>
         <div className="in-game__body">
-          <ul className="active-cards">
+          <ul className="active-cards" ref={cardsRef}>
             {activeCards.map(card => {
               return (
                 <TiltCard

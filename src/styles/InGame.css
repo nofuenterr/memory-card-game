@@ -61,7 +61,6 @@
   text-align: center;
   cursor: pointer;
   container-type: inline-size;
-/*   animation: switch 500ms ease 1 forwards; */
 }
 
 .card__image {
@@ -74,19 +73,54 @@
   font-size: 7.062396271cqi;
 }
 
+/* card animation */
+
+.card.flipped {
+  animation: flipped 1250ms ease-out 1 forwards;
+}
+
+.card.flipped :is(.card__image, p) {
+  animation: show-card 1350ms ease-out 1 forwards;
+}
+
+@keyframes flipped {
+  0% {
+    transform: rotate3d(0, 1, 0, 0deg);
+    pointer-events: none;
+  }
+
+  50% {
+    transform: rotate3d(0, 1, 0, 180deg);
+    pointer-events: none;
+  }
+  
+  80% {
+    transform: rotate3d(0, 1, 0, 0deg);
+    pointer-events: none;
+  }
+
+  100% {
+    transform: rotate3d(0, 1, 0, 0deg);
+    pointer-events: all;
+  }
+}
+
+@keyframes show-card {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 .tilt-card {
   position: relative;
   border-radius: 12px;
   overflow: hidden;
 }
-
-
-/* @keyframes switch {
-  0% {
-    transform: rotate3d(0, 1, 0, 0deg);
-  }
-
-  100% {
-    transform: rotate3d(0, 1, 0, 180deg);
-  }
-} */
